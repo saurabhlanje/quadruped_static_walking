@@ -25,7 +25,7 @@ Important definitions
 5) Transfer phase or Swing phase: The swing phase of gait begins when the foot first leaves the ground and ends when the same foot touches the ground again.
 6) Leg stroke $R$: Distance which a foot is moved relative to body during the support phase. It must be within the workspace of leg
 7) Stroke pitch: Distance between the strokes centers of adjacent legs
-8) Stride length ($\lambda$): Distacne travelled by center of gravity of body within a gait cycle
+8) Stride length $\lambda$: Distacne travelled by center of gravity of body within a gait cycle
 
 
 Useful resources
