@@ -19,10 +19,14 @@ These are easier to implement
 
 Important definitions
 1) Gait: time and location of placement and lifting of each leg along with co ordinated movement of body with 6DOF so as to move the body from one place to another
-2) Duty factor $\beta B_i$: 
-```math
-C_n = \left\{(x_1,\dots,x_n): -1 \le x_i \le 1\right\}
-```
+2) Duty factor $\beta_i$: fraction of cycle time for which the leg $i$ is on ground
+3) Leg phase $\phi_i$: normalised time by which the placement of leg i on ground lags behind the placement of leg 1. Leg 1 is always considered as a reference for timming event
+4) Stance phase or Support phase: The stance phase is the period of time when the foot under consideration is in contact with the floor
+5) Transfer phase or Swing phase: The swing phase of gait begins when the foot first leaves the ground and ends when the same foot touches the ground again.
+6) Leg stroke $R$: Distance which a foot is moved relative to body during the support phase. It must be within the workspace of leg
+7) Stroke pitch: Distance between the strokes centers of adjacent legs
+8) Stride length ($\lambda$): Distacne travelled by center of gravity of body within a gait cycle
+
 
 Useful resources
 1) Book https://www.google.co.in/books/edition/Quadrupedal_Locomotion/3ZlDAAAAQBAJ?hl=en&gbpv=0
