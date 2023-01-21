@@ -19,7 +19,7 @@ These are easier to implement
 
 Important definitions
 1) Gait: time and location of placement and lifting of each leg along with co ordinated movement of body with 6DOF so as to move the body from one place to another
-2) Duty factor $p=\sum_i k_i$: 
+2) Duty factor $\beta B_i$: 
 ```math
 C_n = \left\{(x_1,\dots,x_n): -1 \le x_i \le 1\right\}
 ```
