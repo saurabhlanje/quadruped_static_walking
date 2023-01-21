@@ -20,6 +20,9 @@ These are easier to implement
 Important definitions
 1) Gait: time and location of placement and lifting of each leg along with co ordinated movement of body with 6DOF so as to move the body from one place to another
 2) Duty factor($\alpha$): 
+```math
+C_n = \left\{(x_1,\dots,x_n): -1 \le x_i \le 1\right\}
+```
 
 Useful resources
 1) Book https://www.google.co.in/books/edition/Quadrupedal_Locomotion/3ZlDAAAAQBAJ?hl=en&gbpv=0
