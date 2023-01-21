@@ -26,6 +26,8 @@ Important definitions
 6) Leg stroke $R$: Distance which a foot is moved relative to body during the support phase. It must be within the workspace of leg
 7) Stroke pitch: Distance between the strokes centers of adjacent legs
 8) Stride length $\lambda$: Distacne travelled by center of gravity of body within a gait cycle
+9) Gait diagram: Sequence of leg motion
+10) 
 
 
 Useful resources
