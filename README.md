@@ -43,3 +43,4 @@ Useful resources
 4) https://youtu.be/O_2swSMecB4
 5) https://youtu.be/b0ZUfi8MHY8
 6) https://youtu.be/26BDA4ycCfo
+7) https://github.com/Astronirav/Omnidirectional-Static-Walking-of-Quadruped
