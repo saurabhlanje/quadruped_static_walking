@@ -27,7 +27,13 @@ Important definitions
 7) Stroke pitch: Distance between the strokes centers of adjacent legs
 8) Stride length $\lambda$: Distacne travelled by center of gravity of body within a gait cycle
 9) Gait diagram: Sequence of leg motion
-10) 
+
+
+Stability of legged robot
+Ideal legged robot is stable if the projection of the CG of robot body lies within the support polygon. Ideal robot has massless legs and movements are very slow such that the dynamics are assumed to be absent
+1) Static Stability Margin: Smallest distance from projection of CG to the edges of support polygon.
+2) Longitudinal stability margin: Smallest distance of CG projection to front and rear edges of support polygon. It is simple to calculate as compared to static stability margin
+3) 
 
 
 Useful resources
