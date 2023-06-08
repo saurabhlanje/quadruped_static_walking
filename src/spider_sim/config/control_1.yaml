@@ -1,0 +1,35 @@
+spidy:
+  joint_states_controller:
+      type: joint_state_controller/JointStateController
+      publish_rate: 25
+
+  joint_group_position_controller:
+      type: effort_controllers/JointTrajectoryController
+      joints:
+           - base2upleg_fr_le
+           - mleg2upleg_fr_le
+           - mleg2lleg_fr_le
+           - base2upleg_ba_ri
+           - mleg2upleg_ba_ri
+           - mleg2lleg_ba_ri
+           - base2upleg_re_le
+           - mleg2upleg_re_le
+           - mleg2lleg_re_le
+           - base2upleg_fr_ri
+           - mleg2upleg_fr_ri
+           - mleg2lleg_fr_ri
+
+
+      gains:
+        base2upleg_fr_le  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2upleg_fr_le  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2lleg_fr_le   : {p: 70.0, i: 0.02, d: 50.0}
+        base2upleg_ba_ri  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2upleg_ba_ri  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2lleg_ba_ri   : {p: 70.0, i: 0.02, d: 50.0}
+        base2upleg_re_le  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2upleg_re_le  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2lleg_re_le   : {p: 70.0, i: 0.02, d: 50.0}      
+        base2upleg_fr_ri  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2upleg_fr_ri  : {p: 70.0, i: 0.02, d: 50.0}
+        mleg2lleg_fr_ri   : {p: 70.0, i: 0.02, d: 50.0}

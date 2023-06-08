@@ -1,0 +1,92 @@
+spidy:
+# Publish all joint states -----------------------------------
+ joint_state_controller:
+   type: joint_state_controller/JointStateController
+   publish_rate: 50  
+
+
+# Position Controllers ---------------------------------------
+ joint1_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: base2upleg_fr_le
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint2_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2lleg_fr_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint3_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2upleg_fr_le
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+ joint4_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: base2upleg_ba_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+ joint5_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2upleg_ba_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint6_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2lleg_ba_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+
+ joint7_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: base2upleg_re_le
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint8_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2upleg_re_le
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint9_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2lleg_re_le
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+
+
+ joint10_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: base2upleg_fr_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint11_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2upleg_fr_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}
+
+ joint12_position_controller:
+   type: effort_controllers/JointPositionController
+   joint: mleg2lleg_fr_ri
+   pid: {p: 100.0, i: 0.01, d: 10.0}   
+
+
+
+
+#   base2upleg_fr_le
+#   mleg2upleg_fr_le
+#   mleg2lleg_fr_le
+
+#   base2upleg_ba_ri
+#   mleg2upleg_ba_ri
+#   mleg2lleg_ba_ri
+
+#   base2upleg_re_le
+#   mleg2upleg_re_le
+#   mleg2lleg_re_le
+      
+#   base2upleg_fr_ri
+#   mleg2upleg_fr_ri
+#   mleg2lleg_fr_ri

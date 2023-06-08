@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<robot name="spider_robot">
+    <!-- Looking from back of robot, left top is leg1
+    right top is leg 2 left bottom is leg 3 and right bottom is leg 4-->
+    <!-- not complete-->
+    
+    <gazebo reference="base_link">
+        <material>Gazebo/Blue</material>
+    </gazebo>
+
+    <!-- colouring for leg 1 starts-->
+    <gazebo reference="up_1">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="mid_1">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="low_1">
+        <material>Gazebo/Green</material>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <!-- colouring for leg 2 starts-->
+    <gazebo reference="up_2">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="mid_2">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="low_2">
+        <material>Gazebo/Green</material>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <!-- colouring for leg 3 starts-->
+    <gazebo reference="up_3">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="mid_3">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="low_3">
+        <material>Gazebo/Green</material>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <!-- colouring for leg 4 starts-->
+    <gazebo reference="up_4">
+        <material>Gazebo/Red</material>
+    </gazebo>
+    <gazebo reference="mid_4">
+        <material>Gazebo/Yellow</material>
+    </gazebo>
+    <gazebo reference="low_4">
+        <material>Gazebo/Green</material>
+        <mu1>1</mu1>
+        <mu2>1</mu2>
+    </gazebo>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/body.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="green">
+                <color rgba="0 1 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/body_collsion.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="green">
+                <color rgba="0 1 0 1" />
+            </material>
+        </collision>
+    </link>
+
+    <link name="base_inertia">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <mass value="0.01" />
+            <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+        </inertial>
+    </link>
+    <joint name="inertia2base" type="fixed">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+        <parent link="base_link" />
+        <child link="base_inertia" />
+        <axis xyz="0.0 0.0 0.0" />
+    </joint>
+
+    <!-- front leg 1 starts-->
+    <link name="up_1">
+        <visual>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/up_re_le.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="blue">
+                <color rgba="0 0 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/up_fr_le_collision.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="blue">
+                <color rgba="0 0 1 1" />
+            </material>
+        </collision>
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <mass value="0.01" />
+            <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+        </inertial>
+    </link>
+
+    <joint name="base2upleg_1" type="revolute">
+        <axis xyz="0 0 1" />
+        <parent link="base_link" />
+        <child link="up_1" />
+        <origin xyz="0.0355 0.065 0.0" rpy="0 0 0" />
+        <dynamics damping="0.0" friction="0.0" />
+        <limit effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+    </joint>
+
+    <transmission name="base2upleg_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="base2upleg_1">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="base2upleg_1_motor">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+
+
+    <link name="mid_1">
+        <visual>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/mid_fr_le.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="red">
+                <color rgba="1 0 0 1" />
+            </material>
+        </visual>
+        <collision>
+            <geometry>
+                <mesh filename="package://spider_sim/meshes_final/mid_fr_le_collision.stl"
+                    scale="0.001 0.001 0.001" />
+            </geometry>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <material name="red">
+                <color rgba="1 0 0 1" />
+            </material>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+            <mass value="0.01" />
+            <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+        </inertial>
+
+    </link>
+    <joint name="mleg2upleg_1" type="revolute">
+        <axis xyz="1 0 0" />
+        <parent link="up_1" />
+        <child link="mid_1" />
+        <origin xyz="0.017 0.0274 -0.00825" rpy="0 0 0" />
+        <dynamics damping="0.0" friction="0.0" />
+        <limit effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+    </joint>
+
+    <transmission name="mleg2upleg_1_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="mleg2upleg_1">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="mleg2upleg_1_motor">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+      </transmission>
+
+
+  <link name="low_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://spider_sim/meshes_final/low_fr_le.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <material name="yellow">
+        <color rgba="1 1 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://spider_sim/meshes_final/low_fr_le_collision.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0" />
+      <material name="yellow">
+        <color rgba="1 1 0 1" />
+      </material>
+    </collision>
+    <inertial>
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
+      <mass value="0.01" />
+      <inertia ixx="0.001" ixy="0.001" ixz="0.001" iyy="0.001" iyz="0.001" izz="0.001" />
+    </inertial>
+  </link>
+  <joint name="mleg2lleg_1" type="revolute">
+    <axis xyz="1 0 0" />
+    <parent link="mid_1" />
+    <child link="low_1" />
+    <origin xyz="0.0 0.055 0.0" rpy="0 0 0" />
+    <dynamics damping="0.0" friction="0.0" />
+    <limit effort="30" velocity="1.0" lower="-1.57" upper="1.57" />
+  </joint>
+
+  <transmission name="mleg2lleg_1_trans">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="mleg2lleg_1">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="mleg2lleg_1_motor">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
+  <!-- Leg 1 completed leg 4 starts-->
+
+
+</robot>

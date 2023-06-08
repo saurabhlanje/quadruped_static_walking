@@ -1,0 +1,18 @@
+<launch>
+
+    <!-- Load joint controller configurations from YAML file to parameter server -->
+    <rosparam file="$(find spider_sim)/config/control_1.yaml" command="load"/>
+  
+    <!-- load the controllers -->
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+      output="screen" ns="/spidy" args="joint_states_controller joint_group_position_controller"/>
+  
+    <!-- convert joint states to TF transforms for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+      respawn="false" output="screen">
+      <remap from="/joint_states" to="/spidy/joint_states" />
+    </node>
+
+    <node name="rrr_control_ui" pkg="rqt_joint_trajectory_controller" type="rqt_joint_trajectory_controller" respawn="false" output="screen"/>
+  
+  </launch>

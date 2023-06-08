@@ -1,0 +1,8 @@
+prefix=/home/sa/Desktop/ros/spider_ws/devel
+
+Name: spider_sim
+Description: Description of spider_sim
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
